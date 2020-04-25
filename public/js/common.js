@@ -74,6 +74,7 @@ var Common = (function () {
   // A function that runs a for each loop on a List, running the callback function for each one
   function listForEach(list, callback) {
     for (var i = 0; i < list.length; i++) {
+      // console.log(list[i]);
       callback.call(null, list[i]);
     }
   }

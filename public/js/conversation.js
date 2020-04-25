@@ -38,13 +38,13 @@ var ConversationPanel = (function ()
   function chatUpdateSetup() {
     var currentRequestPayloadSetter = Api.setRequestPayload;
     Api.setRequestPayload = function (newPayloadStr) {
-      currentRequestPayloadSetter.call(Api, newPayloadStr);
+      // currentRequestPayloadSetter.call(Api, newPayloadStr);
       displayMessage(JSON.parse(newPayloadStr), settings.authorTypes.user);
     };
 
     var currentResponsePayloadSetter = Api.setResponsePayload;
     Api.setResponsePayload = function (newPayloadStr) {
-      currentResponsePayloadSetter.call(Api, newPayloadStr);
+      // currentResponsePayloadSetter.call(Api, newPayloadStr);
       displayMessage(JSON.parse(newPayloadStr).result, settings.authorTypes.watson);
     };
 
@@ -145,6 +145,7 @@ var ConversationPanel = (function ()
   function setResponse(responses, isUser, chatBoxElement, index, isTop) {
     if (index < responses.length) {
       var res = responses[index];
+      // console.log(res);
       if (res.type !== 'pause') {
         var currentDiv = getDivObject(res, isUser, isTop);
         chatBoxElement.appendChild(currentDiv);
@@ -275,12 +276,13 @@ var ConversationPanel = (function ()
 
   // Constructs new generic elements from a message payload
   function buildMessageDomElements(newPayload, isUser) {
-    var textArray = isUser ? newPayload.input.text : newPayload.output.text;
+    var textArray = isUser ? newPayload.input.text : newPayload.output.text; //based on the conditio if its user or watson
     if (Object.prototype.toString.call(textArray) !== '[object Array]') {
       textArray = [textArray];
     }
 
     var responses = [];
+
 
     if (newPayload.hasOwnProperty('output')) {
       if (newPayload.output.hasOwnProperty('generic')) {
@@ -293,6 +295,7 @@ var ConversationPanel = (function ()
       }
     } else if (newPayload.hasOwnProperty('input')) {
       var input = '';
+      var i=0;
       textArray.forEach(function (msg) {
         input += msg + ' ';
       });
