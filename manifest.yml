@@ -1,0 +1,6 @@
+applications:
+- name: covid-assistant-simple-suraj1995
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
