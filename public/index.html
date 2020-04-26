@@ -51,264 +51,179 @@
   <script src="js/conversation.js"></script>
   <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+  <script src="js/canvasjs.min.js"></script>
 
 
   <script>
 window.onload = function () {
 
-
-var chart = new CanvasJS.Chart("chartContainer1", {
-  title: {
-    // text: "Total Case Comparison"
-  },
-  // backgroundColor: "#23292A",
-  axisX: {
-    valueFormatString: "MMM YYYY"
-  },
-  axisY2: {
-    // title: "Median List Price",
-    prefix: "",
-    suffix: ""
-  },
-  toolTip: {
-    shared: true
-  },
-  legend: {
-    cursor: "pointer",
-    verticalAlign: "top",
-    horizontalAlign: "center",
-    dockInsidePlotArea: true,
-    itemclick: toogleDataSeries
-  },
-  data: [{
-    type:"line",
-    axisYType: "secondary",
-    name: "San Fransisco",
-    showInLegend: true,
-    markerSize: 0,
-    yValueFormatString: "$#,###k",
-    dataPoints: [   
-      { x: new Date(2014, 00, 01), y: 850 },
-      { x: new Date(2014, 01, 01), y: 889 },
-      { x: new Date(2014, 02, 01), y: 890 },
-      { x: new Date(2014, 03, 01), y: 899 },
-      { x: new Date(2014, 04, 01), y: 903 },
-      { x: new Date(2014, 05, 01), y: 925 },
-      { x: new Date(2014, 06, 01), y: 899 },
-      { x: new Date(2014, 07, 01), y: 875 },
-      { x: new Date(2014, 08, 01), y: 927 },
-      { x: new Date(2014, 09, 01), y: 949 },
-      { x: new Date(2014, 10, 01), y: 946 },
-      { x: new Date(2014, 11, 01), y: 927 },
-      { x: new Date(2015, 00, 01), y: 950 },
-      { x: new Date(2015, 01, 01), y: 998 },
-      { x: new Date(2015, 02, 01), y: 998 },
-      { x: new Date(2015, 03, 01), y: 1050 },
-      { x: new Date(2015, 04, 01), y: 1050 },
-      { x: new Date(2015, 05, 01), y: 999 },
-      { x: new Date(2015, 06, 01), y: 998 },
-      { x: new Date(2015, 07, 01), y: 998 },
-      { x: new Date(2015, 08, 01), y: 1050 },
-      { x: new Date(2015, 09, 01), y: 1070 },
-      { x: new Date(2015, 10, 01), y: 1050 },
-      { x: new Date(2015, 11, 01), y: 1050 },
-      { x: new Date(2016, 00, 01), y: 995 },
-      { x: new Date(2016, 01, 01), y: 1090 },
-      { x: new Date(2016, 02, 01), y: 1100 },
-      { x: new Date(2016, 03, 01), y: 1150 },
-      { x: new Date(2016, 04, 01), y: 1150 },
-      { x: new Date(2016, 05, 01), y: 1150 },
-      { x: new Date(2016, 06, 01), y: 1100 },
-      { x: new Date(2016, 07, 01), y: 1100 },
-      { x: new Date(2016, 08, 01), y: 1150 },
-      { x: new Date(2016, 09, 01), y: 1170 },
-      { x: new Date(2016, 10, 01), y: 1150 },
-      { x: new Date(2016, 11, 01), y: 1150 },
-      { x: new Date(2017, 00, 01), y: 1150 },
-      { x: new Date(2017, 01, 01), y: 1200 },
-      { x: new Date(2017, 02, 01), y: 1200 },
-      { x: new Date(2017, 03, 01), y: 1200 },
-      { x: new Date(2017, 04, 01), y: 1190 },
-      { x: new Date(2017, 05, 01), y: 1170 }
-    ]
-  },
-  {
-    type: "line",
-    axisYType: "secondary",
-    name: "Manhattan",
-    showInLegend: true,
-    markerSize: 0,
-    yValueFormatString: "$#,###k",
-    dataPoints: [
-      { x: new Date(2014, 00, 01), y: 1200 },
-      { x: new Date(2014, 01, 01), y: 1200 },
-      { x: new Date(2014, 02, 01), y: 1190 },
-      { x: new Date(2014, 03, 01), y: 1180 },
-      { x: new Date(2014, 04, 01), y: 1250 },
-      { x: new Date(2014, 05, 01), y: 1270 },
-      { x: new Date(2014, 06, 01), y: 1300 },
-      { x: new Date(2014, 07, 01), y: 1300 },
-      { x: new Date(2014, 08, 01), y: 1358 },
-      { x: new Date(2014, 09, 01), y: 1410 },
-      { x: new Date(2014, 10, 01), y: 1480 },
-      { x: new Date(2014, 11, 01), y: 1500 },
-      { x: new Date(2015, 00, 01), y: 1500 },
-      { x: new Date(2015, 01, 01), y: 1550 },
-      { x: new Date(2015, 02, 01), y: 1550 },
-      { x: new Date(2015, 03, 01), y: 1590 },
-      { x: new Date(2015, 04, 01), y: 1600 },
-      { x: new Date(2015, 05, 01), y: 1590 },
-      { x: new Date(2015, 06, 01), y: 1590 },
-      { x: new Date(2015, 07, 01), y: 1620 },
-      { x: new Date(2015, 08, 01), y: 1670 },
-      { x: new Date(2015, 09, 01), y: 1720 },
-      { x: new Date(2015, 10, 01), y: 1750 },
-      { x: new Date(2015, 11, 01), y: 1820 },
-      { x: new Date(2016, 00, 01), y: 2000 },
-      { x: new Date(2016, 01, 01), y: 1920 },
-      { x: new Date(2016, 02, 01), y: 1750 },
-      { x: new Date(2016, 03, 01), y: 1850 },
-      { x: new Date(2016, 04, 01), y: 1750 },
-      { x: new Date(2016, 05, 01), y: 1730 },
-      { x: new Date(2016, 06, 01), y: 1700 },
-      { x: new Date(2016, 07, 01), y: 1730 },
-      { x: new Date(2016, 08, 01), y: 1720 },
-      { x: new Date(2016, 09, 01), y: 1740 },
-      { x: new Date(2016, 10, 01), y: 1750 },
-      { x: new Date(2016, 11, 01), y: 1750 },
-      { x: new Date(2017, 00, 01), y: 1750 },
-      { x: new Date(2017, 01, 01), y: 1770 },
-      { x: new Date(2017, 02, 01), y: 1750 },
-      { x: new Date(2017, 03, 01), y: 1750 },
-      { x: new Date(2017, 04, 01), y: 1730 },
-      { x: new Date(2017, 05, 01), y: 1730 }
-    ]
-  },
-  {
-    type: "line",
-    axisYType: "secondary",
-    name: "Seatle",
-    showInLegend: true,
-    markerSize: 0,
-    yValueFormatString: "$#,###k",
-    dataPoints: [
-      { x: new Date(2014, 00, 01), y: 409 },
-      { x: new Date(2014, 01, 01), y: 415 },
-      { x: new Date(2014, 02, 01), y: 419 },
-      { x: new Date(2014, 03, 01), y: 429 },
-      { x: new Date(2014, 04, 01), y: 429 },
-      { x: new Date(2014, 05, 01), y: 450 },
-      { x: new Date(2014, 06, 01), y: 450 },
-      { x: new Date(2014, 07, 01), y: 445 },
-      { x: new Date(2014, 08, 01), y: 450 },
-      { x: new Date(2014, 09, 01), y: 450 },
-      { x: new Date(2014, 10, 01), y: 440 },
-      { x: new Date(2014, 11, 01), y: 429 },
-      { x: new Date(2015, 00, 01), y: 435 },
-      { x: new Date(2015, 01, 01), y: 450 },
-      { x: new Date(2015, 02, 01), y: 475 },
-      { x: new Date(2015, 03, 01), y: 475 },
-      { x: new Date(2015, 04, 01), y: 475 },
-      { x: new Date(2015, 05, 01), y: 489 },
-      { x: new Date(2015, 06, 01), y: 495 },
-      { x: new Date(2015, 07, 01), y: 495 },
-      { x: new Date(2015, 08, 01), y: 500 },
-      { x: new Date(2015, 09, 01), y: 508 },
-      { x: new Date(2015, 10, 01), y: 520 },
-      { x: new Date(2015, 11, 01), y: 525 },
-      { x: new Date(2016, 00, 01), y: 525 },
-      { x: new Date(2016, 01, 01), y: 529 },
-      { x: new Date(2016, 02, 01), y: 549 },
-      { x: new Date(2016, 03, 01), y: 550 },
-      { x: new Date(2016, 04, 01), y: 568 },
-      { x: new Date(2016, 05, 01), y: 575 },
-      { x: new Date(2016, 06, 01), y: 579 },
-      { x: new Date(2016, 07, 01), y: 575 },
-      { x: new Date(2016, 08, 01), y: 585 },
-      { x: new Date(2016, 09, 01), y: 589 },
-      { x: new Date(2016, 10, 01), y: 595 },
-      { x: new Date(2016, 11, 01), y: 595 },
-      { x: new Date(2017, 00, 01), y: 595 },
-      { x: new Date(2017, 01, 01), y: 600 },
-      { x: new Date(2017, 02, 01), y: 624 },
-      { x: new Date(2017, 03, 01), y: 635 },
-      { x: new Date(2017, 04, 01), y: 650 },
-      { x: new Date(2017, 05, 01), y: 675 }
-    ]
-  },
-  {
-    type: "line",
-    axisYType: "secondary",
-    name: "Los Angeles",
-    showInLegend: true,
-    markerSize: 0,
-    yValueFormatString: "$#,###k",
-    dataPoints: [
-      { x: new Date(2014, 00, 01), y: 529 },
-      { x: new Date(2014, 01, 01), y: 540 },
-      { x: new Date(2014, 02, 01), y: 539 },
-      { x: new Date(2014, 03, 01), y: 565 },
-      { x: new Date(2014, 04, 01), y: 575 },
-      { x: new Date(2014, 05, 01), y: 579 },
-      { x: new Date(2014, 06, 01), y: 589 },
-      { x: new Date(2014, 07, 01), y: 579 },
-      { x: new Date(2014, 08, 01), y: 579 },
-      { x: new Date(2014, 09, 01), y: 579 },
-      { x: new Date(2014, 10, 01), y: 569 },
-      { x: new Date(2014, 11, 01), y: 525 },
-      { x: new Date(2015, 00, 01), y: 535 },
-      { x: new Date(2015, 01, 01), y: 575 },
-      { x: new Date(2015, 02, 01), y: 599 },
-      { x: new Date(2015, 03, 01), y: 619 },
-      { x: new Date(2015, 04, 01), y: 639 },
-      { x: new Date(2015, 05, 01), y: 648 },
-      { x: new Date(2015, 06, 01), y: 640 },
-      { x: new Date(2015, 07, 01), y: 645 },
-      { x: new Date(2015, 08, 01), y: 648 },
-      { x: new Date(2015, 09, 01), y: 649 },
-      { x: new Date(2015, 10, 01), y: 649 },
-      { x: new Date(2015, 11, 01), y: 649 },
-      { x: new Date(2016, 00, 01), y: 650 },
-      { x: new Date(2016, 01, 01), y: 665 },
-      { x: new Date(2016, 02, 01), y: 675 },
-      { x: new Date(2016, 03, 01), y: 695 },
-      { x: new Date(2016, 04, 01), y: 690 },
-      { x: new Date(2016, 05, 01), y: 699 },
-      { x: new Date(2016, 06, 01), y: 699 },
-      { x: new Date(2016, 07, 01), y: 699 },
-      { x: new Date(2016, 08, 01), y: 699 },
-      { x: new Date(2016, 09, 01), y: 699 },
-      { x: new Date(2016, 10, 01), y: 709 },
-      { x: new Date(2016, 11, 01), y: 699 },
-      { x: new Date(2017, 00, 01), y: 700 },
-      { x: new Date(2017, 01, 01), y: 700 },
-      { x: new Date(2017, 02, 01), y: 724 },
-      { x: new Date(2017, 03, 01), y: 739 },
-      { x: new Date(2017, 04, 01), y: 749 },
-      { x: new Date(2017, 05, 01), y: 740 }
-    ]
-  }]
-});
-chart.render();
-
-function toogleDataSeries(e){
-  if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-    e.dataSeries.visible = false;
-  } else{
-    e.dataSeries.visible = true;
-  }
-  chart.render();
-}
-
   var values = [];
   var DC=[];
   var AC=[];
   var RC=[];
+  var IndLineData=[];
+  var ItalyLineData=[];
+  var SpainLineData=[];
+  var GermanyLineData=[];
+  var FranceLineData=[];
+  var ChinaLineData=[];
+
+
+
     
 // var obj = new Object();
 
   $(document).ready(function() {
+    var today = new Date(); 
+    var dd = today.getDate(); var mm = today.getMonth()+1; //January is 0! 
+    var yyyy = today.getFullYear(); 
+    if(dd<10){dd='0'+dd} 
+    if(mm<10){mm='0'+mm} 
+    var today = yyyy+'-'+mm+'-'+dd+"T00:00:00Z";
+
+//ajax call for India
+     $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/india/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+          $.each(data, function(index, element) {
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              spliteDate=element.Date.split('-');
+              year=spliteDate[0];
+              month=spliteDate[1];
+              day=spliteDate[2].split('T')[0];
+              // console.log(day+month-1+year);
+              date=new Date(year, month-1, day); //since the month in charts starts from 0
+              country=element.Country;
+              IndLineData.push({x:date,y:cases});
+            }
+          });
+   });
+
+//ajax call for Italy
+         $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/italy/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+          $.each(data, function(index, element) {
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              spliteDate=element.Date.split('-');
+              year=spliteDate[0];
+              month=spliteDate[1];
+              day=spliteDate[2].split('T')[0];
+              // console.log(day+month-1+year);
+              date=new Date(year, month-1, day); //since the month in charts starts from 0
+              country=element.Country;
+              ItalyLineData.push({x:date,y:cases});
+            }
+          });
+   });
+
+  //ajax call for Spain
+           $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/spain/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+          $.each(data, function(index, element) {
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              spliteDate=element.Date.split('-');
+              year=spliteDate[0];
+              month=spliteDate[1];
+              day=spliteDate[2].split('T')[0];
+              // console.log(day+month-1+year);
+              date=new Date(year, month-1, day); //since the month in charts starts from 0
+              country=element.Country;
+              SpainLineData.push({x:date,y:cases});
+            }
+          });
+   });
+
+    //ajax for china
+
+           $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/china/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+      var totalCase=0;
+          $.each(data, function(index, element) {
+            // console.log(data[index+1].Date);
+            // console.log(element.Date);
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              totalCase=totalCase+cases;
+
+              if(data[index+1].Date!=element.Date){
+
+                    spliteDate=element.Date.split('-');
+                    year=spliteDate[0];
+                    month=spliteDate[1];
+                    day=spliteDate[2].split('T')[0];
+                    // console.log(day+month-1+year);
+                    date=new Date(year, month-1, day); //since the month in charts starts from 0
+                    country=element.Country;
+                    ChinaLineData.push({x:date,y:totalCase});
+                    totalCase=0;
+
+                    
+              }
+
+            }
+          });
+   });
+    //ajax for France
+
+           $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/france/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+var totalCase=0;
+          $.each(data, function(index, element) {
+
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              totalCase=totalCase+cases;
+
+              if(data[index+1].Date!=element.Date){
+
+                    spliteDate=element.Date.split('-');
+                    year=spliteDate[0];
+                    month=spliteDate[1];
+                    day=spliteDate[2].split('T')[0];
+                    // console.log(day+month-1+year);
+                    date=new Date(year, month-1, day); //since the month in charts starts from 0
+                    country=element.Country;
+                    FranceLineData.push({x:date,y:totalCase});
+                    totalCase=0;
+
+                    
+              }
+
+            }
+          });
+   });
+
+    //ajax for germany
+
+           $.ajax({                                                                                            
+        url:"https://api.covid19api.com/country/germany/status/confirmed/live?from=2020-03-01T00:00:00Z&to="+today
+    }).then(function(data) {
+          $.each(data, function(index, element) {
+            if(element.Date!="0001-01-01T00:00:00Z"){
+              cases=element.Cases;
+              spliteDate=element.Date.split('-');
+              year=spliteDate[0];
+              month=spliteDate[1];
+              day=spliteDate[2].split('T')[0];
+              // console.log(day+month-1+year);
+              date=new Date(year, month-1, day); //since the month in charts starts from 0
+              country=element.Country;
+              GermanyLineData.push({x:date,y:cases});
+            }
+          });
+   });
+
+    // console.log(IndLineData);
     // var temp=[];
 
     var otherSum=0;
@@ -321,6 +236,11 @@ function toogleDataSeries(e){
       $.each(data['Countries'], function(index, element) {
         y='';
         label='';
+          // console.log(element.Country);
+
+        // if(element.CountryCode.trim()=="US"){
+        //   console.log("usa");
+        // }
            switch (element.Country) {
             case 'India':
                       label=element.Country;
@@ -331,7 +251,7 @@ function toogleDataSeries(e){
                       // y=100;
             break;
             case 'United States of America':
-                      label=element.Country;
+                      label="USA";
                       y=element.TotalConfirmed;
                       td=element.TotalRecovered;
                       tr=element.TotalDeaths;
@@ -391,6 +311,7 @@ function toogleDataSeries(e){
             // d={y:y,label:label};
             yper=(y*100)/gtotal;
             values.push({y:yper,label:label});
+
             DC.push({y:td,label:label});
             RC.push({y:tr,label:label});
             AC.push({y:ta,label:label});
@@ -408,7 +329,7 @@ function toogleDataSeries(e){
             RC.push({y:otherSumRec,label:"Others"});
             AC.push({y:otherSumActv,label:"Others"});
            
-          console.log(DC);
+          // console.log(DC);
 
           var chart3 = new CanvasJS.Chart("chartContainer3", {
           theme: "light2",
@@ -495,14 +416,110 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 });
 chart2.render();
 
-function toggleDataSeries(e) {
-  if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-    e.dataSeries.visible = false;
+  function toggleDataSeries(e) {
+    if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+      e.dataSeries.visible = false;
+    }
+    else {
+      e.dataSeries.visible = true;
+    }
+    chart2.render();
   }
-  else {
+
+
+
+  ///lien chart code below
+
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+  title: {
+    // text: "Total Case Comparison"
+  },
+  // backgroundColor: "#23292A",
+  axisX: {
+    valueFormatString: "DD MMM YYYY"
+  },
+  axisY2: {
+    // title: "Median List Price",
+    prefix: "",
+    suffix: ""
+  },
+  toolTip: {
+    shared: true
+  },
+  legend: {
+    cursor: "pointer",
+    verticalAlign: "top",
+    horizontalAlign: "center",
+    dockInsidePlotArea: true,
+    itemclick: toogleDataSeries
+  },
+  data: [{
+    type:"line",
+    axisYType: "secondary",
+    name: "India",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: IndLineData
+  },
+   {
+    type: "line",
+    axisYType: "secondary",
+    name: "Italy",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: ItalyLineData
+  },
+  {
+    type: "line",
+    axisYType: "secondary",
+    name: "Spain",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: SpainLineData
+  },
+    {
+    type: "line",
+    axisYType: "secondary",
+    name: "Germany",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: GermanyLineData
+  },
+  {
+    type: "line",
+    axisYType: "secondary",
+    name: "China",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: ChinaLineData
+  },
+    {
+    type: "line",
+    axisYType: "secondary",
+    name: "France",
+    showInLegend: true,
+    markerSize: 0,
+    yValueFormatString: "#,###",
+    dataPoints: FranceLineData
+  }
+  ]
+});
+chart.render();
+// console.log('chart-'+IndLineData);
+
+function toogleDataSeries(e){
+  if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+    e.dataSeries.visible = false;
+  } else{
     e.dataSeries.visible = true;
   }
-  chart2.render();
+  chart.render();
 }
 
     });
@@ -511,6 +528,7 @@ function toggleDataSeries(e) {
   ///ends
 
 
+///////line chart code below
 
 
 }
@@ -521,7 +539,6 @@ function toggleDataSeries(e) {
 
 </script>
   <script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
 
