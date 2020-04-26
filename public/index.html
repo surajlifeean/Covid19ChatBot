@@ -51,6 +51,8 @@
   <script src="js/conversation.js"></script>
   <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 
   <script>
 window.onload = function () {
@@ -372,44 +374,123 @@ function toogleDataSeries(e){
   chart.render();
 }
 
-var chart3 = new CanvasJS.Chart("chartContainer3", {
-  theme: "light2",
-  animationEnabled: true,
-  // title: {
-  //   text: "Shares of Electricity Generation by Fuel"
-  // },
-  subtitles: [{
-    text: "Covid19",
-    fontSize: 16
-  }],
-  data: [{
-    type: "pie",
-    indexLabelFontSize: 18,
-    radius: 100,
-    indexLabel: "{label} - {y}",
-    yValueFormatString: "###0.0\"%\"",
-    click: explodePie,
-    dataPoints: [
-      { y: 42, label: "Gas" },
-      { y: 21, label: "Nuclear"},
-      { y: 24.5, label: "Renewable" },
-      { y: 6, label: "Coal" },
-      { y: 4, label: "Fuels" },
-      { y: 2.1, label: "Other Fuels" }
+  var values = [];
+// var obj = new Object();
 
-    ]
-  }]
+  $(document).ready(function() {
+    // var temp=[];
+    var otherSum=0;
+    $.ajax({
+        url:"https://api.covid19api.com/summary"
+    }).then(function(data) {
+      gtotal=data['Global'].TotalConfirmed;
+      $.each(data['Countries'], function(index, element) {
+        y='';
+        label='';
+           switch (element.Country) {
+            case 'India':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=100;
+            break;
+            case 'United States of America':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=10;
+            break;
+            case 'Italy':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=10;
+            break;
+            case 'China':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=100;
+            break;
+            case 'Spain':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=10;
+            break;
+            case 'Germany':
+                       label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=10;
+            break;
+            case 'France':
+                      label=element.Country;
+                      y=element.TotalConfirmed;
+                      // y=40;
+            break;
+            default:
+            otherSum=otherSum+element.TotalConfirmed;
+            }
+
+          if(y!=''){
+            // d={y:y,label:label};
+            yper=(y*100)/gtotal;
+            values.push({y:yper,label:label});
+            // console.log();
+          }
+
+
+      }); //outside loop
+
+            yper=(otherSum*100)/gtotal;
+            values.push({y:yper,label:'Others'});
+           
+          console.log(values[0]);
+
+          var chart3 = new CanvasJS.Chart("chartContainer3", {
+          theme: "light2",
+          animationEnabled: true,
+          // title: {
+          //   text: "Shares of Electricity Generation by Fuel"
+          // },
+          subtitles: [{
+            text: "Covid19",
+            fontSize: 16
+          }],
+          data: [{
+            type: "pie",
+            indexLabelFontSize: 10,
+            radius: 100,
+            indexLabel: "{label} - {y}",
+            yValueFormatString: "###0.0\"%\"",
+            click: explodePie,
+            dataPoints: 
+              values
+          }]
+          });
+          chart3.render();
+
+          // alert(values[0]);
+
+          function explodePie(e) {
+          for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+            if(i !== e.dataPointIndex)
+              e.dataSeries.dataPoints[i].exploded = false;
+          }
+          }
+
+
+
+
+    });
 });
-chart3.render();
 
-function explodePie(e) {
-  for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
-    if(i !== e.dataPointIndex)
-      e.dataSeries.dataPoints[i].exploded = false;
-  }
-}
+  ///ends
+
+
+
 
 }
+</script>
+
+
+<script type="text/javascript">
+
 </script>
   <script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
