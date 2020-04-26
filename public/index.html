@@ -57,79 +57,6 @@
   <script>
 window.onload = function () {
 
-var chart2 = new CanvasJS.Chart("chartContainer2", {
-  animationEnabled: true,
-  title:{
-    // text: "Covid19 Total/Reocovered/Deaths"
-  },
-  axisX: {
-    valueFormatString: ""
-
-  },
-  axisY: {
-    prefix: ""
-  },
-  toolTip: {
-    shared: true
-  },
-  legend:{
-    cursor: "pointer",
-    itemclick: toggleDataSeries
-  },
-
-  data: [{
-    type: "stackedBar",
-    name: "Recovered",
-    showInLegend: "true",
-    xValueFormatString: "",
-    yValueFormatString: "$#,##0",
-    dataPoints: [
-      { label: 'city name1', y: 56 },
-      { label: 'city name1', y: 20 },
-      { label: 'city name1', y: 30 },
-
-
-    ]
-  },
-  {
-    type: "stackedBar",
-    name: "Deaths",
-    showInLegend: "true",
-    xValueFormatString: "",
-    yValueFormatString: "$#,##0",
-    dataPoints: [
-      { label: 'city name1', y: 10 },
-      { label: 'city name1', y: 50 },
-      { label: 'city name1', y: 5 },
-
-    ]
-  },
-  {
-    type: "stackedBar",
-    name: "Active",
-    showInLegend: "true",
-    xValueFormatString: "",
-    yValueFormatString: "$#,##0",
-    dataPoints: [
-      { label: 'city name1', y: 48 },
-      { label: 'city name1', y: 50 },
-      { label: 'city name1', y: 96 },
-
-    ]
-  }
- ]
-});
-chart2.render();
-
-function toggleDataSeries(e) {
-  if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-    e.dataSeries.visible = false;
-  }
-  else {
-    e.dataSeries.visible = true;
-  }
-  chart2.render();
-}
 
 var chart = new CanvasJS.Chart("chartContainer1", {
   title: {
@@ -375,11 +302,18 @@ function toogleDataSeries(e){
 }
 
   var values = [];
+  var DC=[];
+  var AC=[];
+  var RC=[];
+    
 // var obj = new Object();
 
   $(document).ready(function() {
     // var temp=[];
+
     var otherSum=0;
+    var otherSumDeath=0;
+    var otherSumRec=0;
     $.ajax({
         url:"https://api.covid19api.com/summary"
     }).then(function(data) {
@@ -391,56 +325,90 @@ function toogleDataSeries(e){
             case 'India':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=100;
             break;
             case 'United States of America':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=10;
             break;
             case 'Italy':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
+
                       // y=10;
             break;
             case 'China':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=100;
             break;
             case 'Spain':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=10;
             break;
             case 'Germany':
                        label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=10;
             break;
             case 'France':
                       label=element.Country;
                       y=element.TotalConfirmed;
+                      td=element.TotalRecovered;
+                      tr=element.TotalDeaths;
+                      ta=y-(tr+td);
                       // y=40;
             break;
             default:
             otherSum=otherSum+element.TotalConfirmed;
+            otherSumRec=otherSumRec+element.TotalRecovered;
+            otherSumDeath=otherSumDeath+element.TotalDeaths;
+
+                      // ta=y-(tr+td);
             }
 
           if(y!=''){
             // d={y:y,label:label};
             yper=(y*100)/gtotal;
             values.push({y:yper,label:label});
-            // console.log();
+            DC.push({y:td,label:label});
+            RC.push({y:tr,label:label});
+            AC.push({y:ta,label:label});
+
+
           }
 
 
       }); //outside loop
 
+            otherSumActv=otherSum-(otherSumRec+otherSumDeath);
             yper=(otherSum*100)/gtotal;
             values.push({y:yper,label:'Others'});
+            DC.push({y:otherSumDeath,label:"Others"});
+            RC.push({y:otherSumRec,label:"Others"});
+            AC.push({y:otherSumActv,label:"Others"});
            
-          console.log(values[0]);
+          console.log(DC);
 
           var chart3 = new CanvasJS.Chart("chartContainer3", {
           theme: "light2",
@@ -476,6 +444,66 @@ function toogleDataSeries(e){
 
 
 
+
+// stacked bar chart code
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+  animationEnabled: true,
+  title:{
+    // text: "Covid19 Total/Reocovered/Deaths"
+  },
+  axisX: {
+    valueFormatString: ""
+
+  },
+  axisY: {
+    prefix: ""
+  },
+  toolTip: {
+    shared: true
+  },
+  legend:{
+    cursor: "pointer",
+    itemclick: toggleDataSeries
+  },
+
+  data: [{
+    type: "stackedBar",
+    name: "Recovered",
+    showInLegend: "true",
+    xValueFormatString: "",
+    yValueFormatString: "#,##0",
+    dataPoints: RC
+  },
+  {
+    type: "stackedBar",
+    name: "Deaths",
+    showInLegend: "true",
+    xValueFormatString: "",
+    yValueFormatString: "#,##0",
+    dataPoints: DC
+  },
+  {
+    type: "stackedBar",
+    name: "Active",
+    showInLegend: "true",
+    xValueFormatString: "",
+    yValueFormatString: "#,##0",
+    dataPoints: AC
+  }
+ ]
+});
+chart2.render();
+
+function toggleDataSeries(e) {
+  if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+    e.dataSeries.visible = false;
+  }
+  else {
+    e.dataSeries.visible = true;
+  }
+  chart2.render();
+}
 
     });
 });
