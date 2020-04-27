@@ -63,7 +63,7 @@ The challenge for you is to build out from this framework to create a more compl
 
 ### Website integration with COVID-19 crisis communication chatbot
 
-
+![Crisis Comms Architecture diagram](/assistant/Crisis-Comms-Architecture-Nodejs-WebServer.png)
 
 1. User visits a website with the COVID-19 chatbot and asks a question.
 2. Node.js web server calls the Watson Assistant service hosted in IBM Cloud.
