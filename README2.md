@@ -96,6 +96,7 @@ The challenge for you is to build out from this framework to create a more compl
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
 
 ## Datasets
+<<<<<<< HEAD
 
 - [covid19api](https://covid19api.com/)
 
@@ -127,10 +128,41 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 
 **Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Watson Assistant**.
   ![Watson Assistant Catalog](/starter-kit/assistant/WA-Photo1.png)
+=======
+- [covid19api](https://covid19api.com/)
+
+## Technology
+
+### IBM technology
+
+- [IBM Watson Assistant](https://www.ibm.com/cloud/watson-assistant/)
+- [Watson Discovery](https://www.ibm.com/cloud/watson-discovery)
+- [Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text)
+- [Watson Text to Speech](https://www.ibm.com/cloud/watson-text-to-speech)
+- [IBM Cloud Functions](https://cloud.ibm.com/functions/)
+
+### Open source technology
+
+- [Node.js](https://nodejs.org/en/)
+
+## Getting started
+
+### Prerequisite
+
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+
+### Set up an instance of Watson Assistant
+
+Log in to IBM Cloud and provision a Watson Assistant instance.
+
+**Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Watson Assistant**.
+  ![Watson Assistant Catalog](assistant/WA-Photo1.png)
+>>>>>>> c014ede98157a57225f403dc6c9f363dc5242ec4
 
 **Step 2.**  Launch the Watson Assistant service.
 
 **Step 3.** Click **Create assistant** and follow [these detailed instructions](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add) for how to create an assistant.
+<<<<<<< HEAD
   ![Watson Assistant Photo2 ](/starter-kit/assistant/WA-Photo2.png)
 
 **Step 4.** Name the Watson Assistant instance **COVID Crisis Communication**
@@ -163,6 +195,40 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 **Step 13.** Ask the Watson Assistant chatbot some questions about COVID-19.
 <p align="center">
 <img width="50%" height="50%" src="https://raw.githubusercontent.com/Call-for-Code/Solution-Starter-Kit-Communication-2020/master/starter-kit/assistant/WA-Photo101.png">
+=======
+  ![Watson Assistant Photo2 ](assistant/WA-Photo2.png)
+
+**Step 4.** Name the Watson Assistant instance **COVID Crisis Communication**
+  ![Watson Assistant Photo3 ](assistant/WA-Photo3.png)
+
+**Step 5.** Click **Add Dialog skill** to add this to your assistant. Follow [the documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) if you have questions.
+  ![Watson Assistant Photo4 ](assistant/WA-Photo4.png)
+
+**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](.assistant/skill-CDC-COVID-FAQ.json) file.
+  ![Watson Assistant Photo5 ](assistant/WA-Photo5.png)
+
+**Step 7.** Go back to the All Assistants page. From the action menu ( **`⋮`** ), open **Settings**.
+  ![Watson Assistant Photo6 ](assistant/WA-Photo6.png)
+
+**Step 8.**  On the Settings tab, click **API Details** on the left and make a note of the `Assistant ID` and `Api Key` for future use.
+  ![Watson Assistant Photo7 ](assistant/WA-Photo7.png)
+
+**Step 9.** Go back to the All Assistants page and click on the **Skills** link.
+  ![Watson Assistant Skills ](assistant/WA-Skills.png)
+
+**Step 10.** On the Skill page, click on the action menu ( **`⋮`** ), open **View API Details**.
+  ![Watson Assistant Skill Properties](assistant/WA-SkillAPIProperties.png)
+
+**Step 11.** On the Skill Details page, make note of the `Skill ID` for future use.
+  ![Watson Assistant Skill Details](assistant/WA-SkillDetails.png)
+
+**Step 12.**  Go back to your dialog skill and click on the **Preview Link** button on the side to get a link to test and verify your assistant.
+  ![Watson Assistant Photo9 ](assistant/WA-Photo91.png)
+
+**Step 13.** Ask the Watson Assistant chatbot some questions about COVID-19.
+<p align="center">
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/Call-for-Code/Solution-Starter-Kit-Communication-2020/masterassistant/WA-Photo101.png">
+>>>>>>> c014ede98157a57225f403dc6c9f363dc5242ec4
 </p>
 
 
@@ -172,14 +238,22 @@ Now that you’ve created your Watson Assistant-enabled chatbot, you need to con
 
 A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.
 
+<<<<<<< HEAD
 [Follow these instructions for setting up webhook](./starter-kit/webhook/README.md) with the Watson Assistant chatbot you just provisioned.
+=======
+[Follow these instructions for setting up webhook](.webhook/README.md) with the Watson Assistant chatbot you just provisioned.
+>>>>>>> c014ede98157a57225f403dc6c9f363dc5242ec4
 
 
 ### Embed your COVID-19 chatbot on a Node.js website
 
 Finally, you can embed your COVID-19 crisis communication chatbot on a Node.js website.
 
+<<<<<<< HEAD
 - Follow the [COVID-Simple installation instructions](./starter-kit/covid-simple/README.md)
+=======
+- Follow the [COVID-Simple installation instructions](.covid-simple/README.md)
+>>>>>>> c014ede98157a57225f403dc6c9f363dc5242ec4
 
 ## Disclosures
 
