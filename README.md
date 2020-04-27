@@ -88,11 +88,7 @@ The challenge for you is to build out from this framework to create a more compl
 - [How-to guides for chatbots](https://www.ibm.com/watson/how-to-build-a-chatbot)
 - [Learning path: Getting started with Watson Assistant](https://developer.ibm.com/series/learning-path-watson-assistant/)
 - [Chatbot with Watson Discovery](https://github.com/IBM/watson-discovery-sdu-with-assistant)
-- [Chat Bot Slack Deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
-- [Node-RED Slack Integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
-- [Train a speech-to-text model](https://developer.ibm.com/patterns/customize-and-continuously-train-your-own-watson-speech-service/)
 - [Making Programmatic Calls from Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-webhooks)
-- [IBM Cloud Voice Agent with Twilio](https://developer.ibm.com/recipes/tutorials/ibms-voice-agent-with-watson-and-twilio/)
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
 
 ## Datasets
@@ -104,8 +100,6 @@ The challenge for you is to build out from this framework to create a more compl
 
 - [IBM Watson Assistant](https://www.ibm.com/cloud/watson-assistant/)
 - [Watson Discovery](https://www.ibm.com/cloud/watson-discovery)
-- [Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text)
-- [Watson Text to Speech](https://www.ibm.com/cloud/watson-text-to-speech)
 - [IBM Cloud Functions](https://cloud.ibm.com/functions/)
 
 ### Open source technology
