@@ -1,5 +1,5 @@
 applications:
-- name: covid-assistant-simple-suraj1995
+- name: covid-assistant-Qvid
   command: npm start
   path: .
   memory: 256M
