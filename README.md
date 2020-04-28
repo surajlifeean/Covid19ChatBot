@@ -1,6 +1,6 @@
-# COVID Crisis Communications Starter Kit
+# Qvid, Covid19 Crisis Communication Chat Bot
 
-This solution starter was created by technologists from IBM.  Translations are available: [JP](/README_JP.md)
+This solution is created by technologists from Cognizant.  
 
 ## Authors
 
@@ -44,9 +44,9 @@ IBM Watson Assistant service helps you build, train, and deploy conversational i
 
 ## The idea
 
-COVID-19 has citizens looking for answers about symptoms and testing sites as well as current status of schools, transportation, and other public services. Using Watson Assistant, this Call for Code Starter Kit has designed a virtual assistant pre-loaded to understand and respond to common questions about COVID-19, scan COVID-19 news articles using Watson Discovery and respond to COVID statistics inquires with data from trusted sources.
+COVID-19 has citizens looking for answers about symptoms and testing sites as well as current status of schools, transportation, and other public services. Using Watson Assistant, this Application has been designed to understand and respond to common questions about COVID-19, scan COVID-19 news articles using Watson Discovery and respond to COVID statistics inquires with data from trusted sources.
 
-With this Watson Assistant powered Crisis Communications Starter Kit you can integrate a chatbot into your Call for Code solution in an IBM Cloud hosted web server, using a Slack integration or via a Node-RED Dashboard. 
+With this Watson Assistant powered chatbot in IBM Cloud hosted web server. The burden on traditional systems could be relieved.
 
 It can:
 - Respond by sharing consistent, accurate COVID-19 information
@@ -57,7 +57,6 @@ It can:
 The challenge for you is to build out from this framework to create a more complete solution.
 
 ## How it works
-
 
 ## Diagrams
 
@@ -112,7 +111,7 @@ The challenge for you is to build out from this framework to create a more compl
 
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 
-### Set up an instance of Watson Assistant
+### Getting Started
 
 Log in to IBM Cloud and provision a Watson Assistant instance.
 
@@ -130,7 +129,7 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 **Step 5.** Click **Add Dialog skill** to add this to your assistant. Follow [the documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) if you have questions.
   ![Watson Assistant Photo4 ](assistant/WA-Photo4.png)
 
-**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](.assistant/skill-CDC-COVID-FAQ.json) file.
+**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](assistant/skill-CDC-COVID-FAQ.json) file.
   ![Watson Assistant Photo5 ](assistant/WA-Photo5.png)
 
 **Step 7.** Go back to the All Assistants page. From the action menu ( **`⋮`** ), open **Settings**.
