@@ -40,7 +40,7 @@ IBM Watson Assistant service helps you build, train, and deploy conversational i
 
 ## Demo video
 
-[![Watch the video]](https://www.youtube.com/watch?v=o5bPZUVUVH0)
+[![Watch the video](https://github.com/Code-and-Response/Liquid-Prep/blob/master/images/IBM-interview-video-image.png)](https://www.youtube.com/watch?v=o5bPZUVUVH0)
 
 
 ## The idea
