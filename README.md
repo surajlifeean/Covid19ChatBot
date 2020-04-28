@@ -38,8 +38,9 @@ Whether via text, phone, websites, or communication apps, conversing with chatbo
 
 IBM Watson Assistant service helps you build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users face while trying to gather accurate, relevant information. Whether you're trying to learn the latest news about Covid-19 or learn where there's testing in your area, a chatbot can play a major role in helping communities quickly understand crucial information and free up customer service resources to focus on higher-level issues.
 
-## Video
+## Demo video
 
+[![Watch the video]](https://www.youtube.com/watch?v=o5bPZUVUVH0)
 
 
 ## The idea
