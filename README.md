@@ -153,7 +153,7 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 
 **Step 13.** Ask the Watson Assistant chatbot some questions about COVID-19.
 <p align="center">
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/Call-for-Code/Solution-Starter-Kit-Communication-2020/masterassistant/WA-Photo101.png">
+<img width="50%" height="50%" src="https://github.com/surajlifeean/Covid19ChatBot/blob/master/assistant/WA-Photo101.png">
 </p>
 
 
